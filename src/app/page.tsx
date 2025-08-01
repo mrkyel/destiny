@@ -1,11 +1,12 @@
 import {
-  Calendar,
-  Clock,
-  Users,
-  BookOpen,
-  Star,
-  ArrowRight,
-} from "lucide-react";
+  FaCalendar,
+  FaClock,
+  FaUsers,
+  FaBookOpen,
+  FaStar,
+  FaArrowRight,
+} from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,29 +17,35 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                <Star className="w-5 h-5 text-white" />
+                <FaStar className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-bold text-gray-900">나의 운명</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a
-                href="#about"
+              <Link
+                href="/intro"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                소개
-              </a>
-              <a
-                href="#articles"
+                명리학이란?
+              </Link>
+              <Link
+                href="/basics"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                글목록
-              </a>
-              <a
-                href="#community"
+                기초학습
+              </Link>
+              <Link
+                href="/saju"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                커뮤니티
-              </a>
+                사주
+              </Link>
+              <Link
+                href="/tools"
+                className="text-gray-700 hover:text-orange-600 transition-colors"
+              >
+                도구
+              </Link>
             </nav>
             <button className="md:hidden">
               <div className="w-6 h-6 flex flex-col justify-center space-y-1">
@@ -68,14 +75,20 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-              <BookOpen className="w-5 h-5" />
+            <Link
+              href="/intro"
+              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+            >
+              <FaBookOpen className="w-5 h-5" />
               <span>명리학 배우기</span>
-            </button>
-            <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 flex items-center space-x-2">
-              <Calendar className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/tools/fortune"
+              className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 flex items-center space-x-2"
+            >
+              <FaCalendar className="w-5 h-5" />
               <span>운세 보기</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -95,7 +108,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
-                <BookOpen className="w-6 h-6 text-orange-600" />
+                <FaBookOpen className="w-6 h-6 text-orange-600" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4">
                 명리학 기초
@@ -108,13 +121,13 @@ export default function Home() {
                 className="text-orange-600 hover:text-orange-700 font-medium flex items-center space-x-1"
               >
                 <span>자세히 보기</span>
-                <ArrowRight className="w-4 h-4" />
+                <FaArrowRight className="w-4 h-4" />
               </a>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <Calendar className="w-6 h-6 text-red-600" />
+                <FaCalendar className="w-6 h-6 text-red-600" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4">
                 사주 해석
@@ -128,13 +141,13 @@ export default function Home() {
                 className="text-red-600 hover:text-red-700 font-medium flex items-center space-x-1"
               >
                 <span>자세히 보기</span>
-                <ArrowRight className="w-4 h-4" />
+                <FaArrowRight className="w-4 h-4" />
               </a>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                <Clock className="w-6 h-6 text-amber-600" />
+                <FaClock className="w-6 h-6 text-amber-600" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-4">
                 운세 보기
@@ -147,7 +160,7 @@ export default function Home() {
                 className="text-amber-600 hover:text-amber-700 font-medium flex items-center space-x-1"
               >
                 <span>자세히 보기</span>
-                <ArrowRight className="w-4 h-4" />
+                <FaArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -214,7 +227,7 @@ export default function Home() {
                     className="text-orange-600 hover:text-orange-700 font-medium flex items-center space-x-1"
                   >
                     <span>읽어보기</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <FaArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </article>
@@ -236,15 +249,15 @@ export default function Home() {
             </p>
             <div className="flex items-center justify-center space-x-8 text-gray-600">
               <div className="flex items-center space-x-2">
-                <Users className="w-5 h-5" />
+                <FaUsers className="w-5 h-5" />
                 <span>명리학 애호가들과 소통</span>
               </div>
               <div className="flex items-center space-x-2">
-                <BookOpen className="w-5 h-5" />
+                <FaBookOpen className="w-5 h-5" />
                 <span>지식 공유</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Star className="w-5 h-5" />
+                <FaStar className="w-5 h-5" />
                 <span>운세 상담</span>
               </div>
             </div>
@@ -263,7 +276,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                  <Star className="w-5 h-5 text-white" />
+                  <FaStar className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="text-xl font-bold">나의 운명</h4>
               </div>

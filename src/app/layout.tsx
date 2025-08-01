@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     description:
       "명리학을 통해 나의 운명을 알아보고, 인생의 방향을 찾아보세요.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "나의 운명 - 명리학 블로그",
+      },
+    ],
   },
 };
 
