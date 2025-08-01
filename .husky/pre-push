@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 빌드 체크 중..."
+yarn build
+
+if [ $? -eq 0 ]; then
+  echo "✅ 빌드 성공! 푸시를 진행합니다."
+  exit 0
+else
+  echo "❌ 빌드 실패! 푸시를 중단합니다."
+  echo "빌드 에러를 수정한 후 다시 시도해주세요."
+  exit 1
+fi 

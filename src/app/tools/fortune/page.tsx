@@ -4,10 +4,9 @@ import {
   FaArrowLeft,
   FaStar,
   FaCalendar,
-  FaClock,
   FaHeart,
   FaDice,
-  FaRefresh,
+  FaRedo,
   FaShare,
 } from "react-icons/fa";
 import {
@@ -154,15 +153,6 @@ export default function FortunePage() {
     닭: "정직함과 시간관념이 인정받는 시기입니다.",
     개: "충성스러운 마음으로 주변 사람들의 신뢰를 얻을 수 있습니다.",
     돼지: "관대한 마음으로 행복한 하루를 보낼 수 있습니다.",
-  };
-
-  const getTodayFortune = () => {
-    const today = new Date();
-    const dayOfYear = Math.floor(
-      (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) /
-        (1000 * 60 * 60 * 24)
-    );
-    return dailyFortunes[dayOfYear % dailyFortunes.length];
   };
 
   const getRandomFortune = () => {
@@ -366,7 +356,7 @@ export default function FortunePage() {
                   onClick={() => window.location.reload()}
                   className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 flex items-center space-x-2 mx-auto"
                 >
-                  <FaRefresh className="w-4 h-4" />
+                  <FaRedo className="w-4 h-4" />
                   <span>다른 운세 보기</span>
                 </button>
               </div>
