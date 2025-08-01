@@ -83,7 +83,7 @@ export default function Home() {
               <span>명리학 배우기</span>
             </Link>
             <Link
-              href="/tools/calculator"
+              href="/tools/fortune"
               className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 flex items-center space-x-2"
             >
               <FaCalendar className="w-5 h-5" />
