@@ -1,15 +1,18 @@
+import { FaArrowLeft, FaArrowRight, FaStar, FaDog } from "react-icons/fa";
 import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Star,
-  Sun,
-  Moon,
-  Zap,
-  Droplets,
-  Mountain,
-  Leaf,
-} from "lucide-react";
+  GiSeatedMouse,
+  GiTigerHead,
+  GiRabbit,
+  GiSnake,
+  GiSheep,
+  GiMonkey,
+  GiRooster,
+  GiPig,
+  GiSpikedDragonHead,
+  GiHorseHead,
+} from "react-icons/gi";
+import { PiCow } from "react-icons/pi";
+import { Sun, Moon, Zap, Droplets, Mountain, Leaf } from "lucide-react";
 import Link from "next/link";
 
 export default function CheonganJijiPage() {
@@ -21,7 +24,7 @@ export default function CheonganJijiPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                <Star className="w-5 h-5 text-white" />
+                <FaStar className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-bold text-gray-900">나의 운명</h1>
             </Link>
@@ -287,6 +290,7 @@ export default function CheonganJijiPage() {
               {
                 name: "자(子)",
                 animal: "쥐",
+                icon: GiSeatedMouse,
                 element: "수",
                 time: "23:00-01:00",
                 month: "12월",
@@ -295,6 +299,7 @@ export default function CheonganJijiPage() {
               {
                 name: "축(丑)",
                 animal: "소",
+                icon: PiCow,
                 element: "토",
                 time: "01:00-03:00",
                 month: "1월",
@@ -303,6 +308,7 @@ export default function CheonganJijiPage() {
               {
                 name: "인(寅)",
                 animal: "호랑이",
+                icon: GiTigerHead,
                 element: "목",
                 time: "03:00-05:00",
                 month: "2월",
@@ -311,6 +317,7 @@ export default function CheonganJijiPage() {
               {
                 name: "묘(卯)",
                 animal: "토끼",
+                icon: GiRabbit,
                 element: "목",
                 time: "05:00-07:00",
                 month: "3월",
@@ -319,6 +326,7 @@ export default function CheonganJijiPage() {
               {
                 name: "진(辰)",
                 animal: "용",
+                icon: GiSpikedDragonHead,
                 element: "토",
                 time: "07:00-09:00",
                 month: "4월",
@@ -327,6 +335,7 @@ export default function CheonganJijiPage() {
               {
                 name: "사(巳)",
                 animal: "뱀",
+                icon: GiSnake,
                 element: "화",
                 time: "09:00-11:00",
                 month: "5월",
@@ -335,6 +344,7 @@ export default function CheonganJijiPage() {
               {
                 name: "오(午)",
                 animal: "말",
+                icon: GiHorseHead,
                 element: "화",
                 time: "11:00-13:00",
                 month: "6월",
@@ -343,6 +353,7 @@ export default function CheonganJijiPage() {
               {
                 name: "미(未)",
                 animal: "양",
+                icon: GiSheep,
                 element: "토",
                 time: "13:00-15:00",
                 month: "7월",
@@ -351,6 +362,7 @@ export default function CheonganJijiPage() {
               {
                 name: "신(申)",
                 animal: "원숭이",
+                icon: GiMonkey,
                 element: "금",
                 time: "15:00-17:00",
                 month: "8월",
@@ -359,6 +371,7 @@ export default function CheonganJijiPage() {
               {
                 name: "유(酉)",
                 animal: "닭",
+                icon: GiRooster,
                 element: "금",
                 time: "17:00-19:00",
                 month: "9월",
@@ -367,6 +380,7 @@ export default function CheonganJijiPage() {
               {
                 name: "술(戌)",
                 animal: "개",
+                icon: FaDog,
                 element: "토",
                 time: "19:00-21:00",
                 month: "10월",
@@ -375,6 +389,7 @@ export default function CheonganJijiPage() {
               {
                 name: "해(亥)",
                 animal: "돼지",
+                icon: GiPig,
                 element: "수",
                 time: "21:00-23:00",
                 month: "11월",
@@ -387,9 +402,7 @@ export default function CheonganJijiPage() {
               >
                 <div className="text-center mb-4">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl font-bold text-orange-600">
-                      {jiji.animal}
-                    </span>
+                    <jiji.icon className="w-8 h-8 text-orange-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">
                     {jiji.name}
@@ -497,7 +510,7 @@ export default function CheonganJijiPage() {
               href="/intro"
               className="flex items-center space-x-2 text-gray-600 hover:text-orange-600 transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <FaArrowLeft className="w-4 h-4" />
               <span>명리학이란? 돌아가기</span>
             </Link>
 
@@ -506,7 +519,7 @@ export default function CheonganJijiPage() {
               className="flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300"
             >
               <span>다음: 오행(五行) 배우기</span>
-              <ArrowRight className="w-4 h-4" />
+              <FaArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -519,7 +532,7 @@ export default function CheonganJijiPage() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                  <Star className="w-5 h-5 text-white" />
+                  <FaStar className="w-5 h-5 text-white" />
                 </div>
                 <h4 className="text-xl font-bold">나의 운명</h4>
               </div>
