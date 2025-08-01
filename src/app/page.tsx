@@ -6,6 +6,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,24 +22,30 @@ export default function Home() {
               <h1 className="text-xl font-bold text-gray-900">나의 운명</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a
-                href="#about"
+              <Link
+                href="/intro"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                소개
-              </a>
-              <a
-                href="#articles"
+                명리학이란?
+              </Link>
+              <Link
+                href="/basics"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                글목록
-              </a>
-              <a
-                href="#community"
+                기초학습
+              </Link>
+              <Link
+                href="/saju"
                 className="text-gray-700 hover:text-orange-600 transition-colors"
               >
-                커뮤니티
-              </a>
+                사주
+              </Link>
+              <Link
+                href="/tools"
+                className="text-gray-700 hover:text-orange-600 transition-colors"
+              >
+                도구
+              </Link>
             </nav>
             <button className="md:hidden">
               <div className="w-6 h-6 flex flex-col justify-center space-y-1">
@@ -68,14 +75,20 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+            <Link
+              href="/intro"
+              className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+            >
               <BookOpen className="w-5 h-5" />
               <span>명리학 배우기</span>
-            </button>
-            <button className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 flex items-center space-x-2">
+            </Link>
+            <Link
+              href="/tools/calculator"
+              className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 flex items-center space-x-2"
+            >
               <Calendar className="w-5 h-5" />
               <span>운세 보기</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
